@@ -1,0 +1,5 @@
+spring:
+  mongodb:
+    uri: ${MONGODB_URI:mongodb://localhost:27017/dental_clinic}
+app:
+  frontend-url: http://localhost:5173

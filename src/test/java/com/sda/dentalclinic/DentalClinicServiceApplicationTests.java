@@ -1,4 +1,4 @@
-package com.example.sda.dental_clinic_service;
+package com.sda.dentalclinic;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

@@ -1,4 +1,4 @@
-package com.example.sda.dental_clinic_service;
+package com.sda.dentalclinic;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -9,5 +9,4 @@ public class DentalClinicServiceApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(DentalClinicServiceApplication.class, args);
 	}
-
 }
