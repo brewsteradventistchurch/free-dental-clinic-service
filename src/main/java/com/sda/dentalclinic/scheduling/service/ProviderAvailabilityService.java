@@ -8,6 +8,8 @@ import java.time.LocalDate;
 
 public interface ProviderAvailabilityService {
 
+    Flux<ProviderAvailability> findAll();
+
     Flux<ProviderAvailability> findByDate(LocalDate date);
 
     Mono<ProviderAvailability> findByProviderAndDate(
@@ -25,4 +27,8 @@ public interface ProviderAvailabilityService {
             ProviderAvailability availability,
             int startMinutes,
             int endMinutes);
+
+    Flux<ProviderAvailability> findDatesOnOrAfter(
+            LocalDate date
+    );
 }

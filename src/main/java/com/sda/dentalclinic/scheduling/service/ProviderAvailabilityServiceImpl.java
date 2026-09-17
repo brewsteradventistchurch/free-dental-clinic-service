@@ -23,6 +23,15 @@ public class ProviderAvailabilityServiceImpl
     private final ClinicConfigurationService configurationService;
 
     @Override
+    public Flux<ProviderAvailability> findAll() {
+        return repository.findAll()
+                .sort(
+                        //(left, right) -> left.getDate().compareTo(right.getDate())
+                        Comparator.comparing(ProviderAvailability::getDate)
+                );
+    }
+
+    @Override
     public Flux<ProviderAvailability> findByDate(LocalDate date) {
         return repository.findByDate(date);
     }
@@ -76,8 +85,8 @@ public class ProviderAvailabilityServiceImpl
                             availability.getBlocks() == null
                                     ? new ArrayList<>()
                                     : new ArrayList<>(
-                                            availability.getBlocks()
-                                    );
+                                    availability.getBlocks()
+                            );
 
                     blocks.sort(
                             Comparator.comparingInt(
@@ -122,6 +131,13 @@ public class ProviderAvailabilityServiceImpl
                         startMinutes >= block.getStartMinutes()
                                 && endMinutes <= block.getEndMinutes()
                 );
+    }
+
+    @Override
+    public Flux<ProviderAvailability> findDatesOnOrAfter(
+            LocalDate date
+    ) {
+        return repository.findByDateGreaterThanEqualOrderByDateAsc(date);
     }
 
     private Mono<Void> validateAvailability(

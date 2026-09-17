@@ -18,8 +18,12 @@ public class ProviderAvailabilityController {
     private final ProviderAvailabilityService availabilityService;
 
     @GetMapping
-    public Flux<ProviderAvailability> findByDate(
-            @RequestParam LocalDate date) {
+    public Flux<ProviderAvailability> find(
+            @RequestParam(required = false) LocalDate date) {
+
+        if (date == null) {
+            return availabilityService.findAll();
+        }
 
         return availabilityService.findByDate(date);
     }

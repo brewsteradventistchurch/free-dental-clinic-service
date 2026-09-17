@@ -19,4 +19,8 @@ public interface ProviderAvailabilityRepository
     Mono<Void> deleteByProviderIdAndDate(
             String providerId,
             LocalDate date);
+
+    Flux<ProviderAvailability> findByDateGreaterThanEqualOrderByDateAsc(
+            LocalDate date
+    );
 }
