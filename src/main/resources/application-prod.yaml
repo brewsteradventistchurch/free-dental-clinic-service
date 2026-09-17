@@ -1,6 +1,12 @@
 spring:
   mongodb:
     uri: ${MONGODB_URI}
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            redirect-uri: https://sda-dental-clinic.onrender.com/login/oauth2/code/google
 app:
   frontend-url: https://sda-dental-clinic.onrender.com
 server:
