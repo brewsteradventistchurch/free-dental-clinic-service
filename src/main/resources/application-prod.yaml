@@ -2,4 +2,7 @@ spring:
   mongodb:
     uri: ${MONGODB_URI}
 app:
-  frontend-url: https://your-production-frontend-url
+  frontend-url: https://sda-dental-clinic.onrender.com
+server:
+  port: ${PORT:8080}
+  forward-headers-strategy: native
