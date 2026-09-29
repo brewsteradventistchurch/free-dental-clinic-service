@@ -27,8 +27,5 @@ management:
 logging:
   level:
     org.springframework.security: DEBUG
-    org.springframework.security.oauth2.client: TRACE
-    org.springframework.security.oauth2.client.web: TRACE
-    org.springframework.security.web.server.authentication: TRACE
     org.springframework.security.web.server.csrf: TRACE
     com.sda.dentalclinic.security: DEBUG
